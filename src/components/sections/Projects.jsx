@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiX } from 'react-icons/fi';
 import { FaAws, FaEthereum, FaTools, FaVoteYea } from 'react-icons/fa';
+import TiltCard from '../ui/TiltCard';
 
 const projects = [
   {
@@ -126,56 +127,59 @@ const ProjectCard = ({ project, onClick }) => {
   const IconComponent = project.icon;
 
   return (
-    <motion.div
-      whileHover={{ y: -10 }}
-      className="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-neon-blue/50 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-[0_0_20px_rgba(0,191,255,0.2)]"
-      onClick={() => onClick(project)}
-    >
-      <div className={`aspect-video overflow-hidden bg-gradient-to-br ${project.gradient} flex items-center justify-center relative`}>
-        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-300" />
-        <IconComponent className="w-24 h-24 text-white/90 relative z-10 group-hover:scale-110 transition-transform duration-300" />
-      </div>
-      <div className="p-6">
-        <div className="flex justify-between items-start mb-3">
-          <h3 className="text-xl font-bold text-text-primary">{project.title}</h3>
-          <div className="flex space-x-2">
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-muted hover:text-neon-blue transition-colors"
-                onClick={(e) => e.stopPropagation()}
+    <TiltCard className="h-full">
+      <div
+        className="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-neon-blue/50 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-[0_0_20px_rgba(0,191,255,0.2)] h-full bg-background"
+        onClick={() => onClick(project)}
+      >
+        <div className={`aspect-video overflow-hidden bg-gradient-to-br ${project.gradient} flex items-center justify-center relative`}>
+          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-300" />
+          <IconComponent className="w-24 h-24 text-white/90 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+        </div>
+        <div className="p-6">
+          <div className="flex justify-between items-start mb-3">
+            <h3 className="text-xl font-bold text-text-primary group-hover:text-neon-blue transition-colors">
+              {project.title}
+            </h3>
+            <div className="flex gap-2">
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-muted hover:text-neon-blue transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <FiGithub size={20} />
+                </a>
+              )}
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-muted hover:text-neon-blue transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <FiExternalLink size={20} />
+                </a>
+              )}
+            </div>
+          </div>
+          <p className="text-text-muted mb-4 line-clamp-2">{project.description}</p>
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs px-2 py-1 rounded-full bg-surface border border-gray-700 text-text-secondary"
               >
-                <FiGithub size={20} />
-              </a>
-            )}
-            {project.demo && (
-              <a
-                href={project.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-muted hover:text-neon-blue transition-colors"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <FiExternalLink size={20} />
-              </a>
-            )}
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
-        <p className="text-text-muted mb-4">{project.description}</p>
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag, index) => (
-            <span
-              key={index}
-              className="px-2 py-1 text-xs rounded-full bg-background text-text-muted border border-gray-800"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
       </div>
-    </motion.div>
+    </TiltCard>
   );
 };
 

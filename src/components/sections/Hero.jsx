@@ -29,10 +29,10 @@ const Hero = () => {
     show: {
       width: "100%",
       transition: {
-        duration: 3,
+        duration: 3.5,
         ease: "linear",
         repeat: Infinity,
-        repeatDelay: 3
+        repeatDelay: 1.5
       }
     }
   };
@@ -91,12 +91,12 @@ const Hero = () => {
             <span className="block neon-glow break-words">Karthikeyan</span>
           </motion.h1>
 
-          <motion.div variants={item} className="mb-6 sm:mb-8 overflow-hidden max-w-full mx-auto">
+          <motion.div variants={item} className="mb-8 sm:mb-10 overflow-hidden inline-block max-w-full">
             <motion.h2
-              className="text-sm sm:text-xl md:text-3xl font-bold text-text-muted whitespace-nowrap border-r-4 border-neon-purple pr-2 inline-block"
+              className="text-xs sm:text-xl md:text-3xl font-bold text-text-muted whitespace-nowrap border-r-4 border-neon-purple pr-1 sm:pr-2 overflow-hidden"
               variants={typingEffect}
             >
-              Cloud-Native & Backend Developer
+              Cloud-Native & Backend Developer | AWS | Blockchain
             </motion.h2>
           </motion.div>
 
@@ -109,7 +109,7 @@ const Hero = () => {
 
           <motion.div
             variants={item}
-            className="flex flex-col sm:flex-row justify-center gap-4 mb-12 sm:mb-16 px-2 w-full max-w-md sm:max-w-none mx-auto"
+            className="flex flex-col sm:flex-row justify-center gap-4 mb-12 sm:mb-16 px-4 w-full max-w-sm sm:max-w-none mx-auto"
           >
             <a
               href="#contact"

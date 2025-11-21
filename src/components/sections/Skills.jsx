@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FiCode, FiServer, FiCpu, FiDatabase, FiLayers } from 'react-icons/fi';
+import TiltCard from '../ui/TiltCard';
 
 const skills = [
   {
@@ -23,7 +24,7 @@ const skills = [
       { name: 'Python', level: 85 },
       { name: 'Node.js', level: 75 },
       { name: 'API Design (REST)', level: 90 },
-       ],
+    ],
   },
   {
     category: 'Blockchain Tools',
@@ -39,8 +40,8 @@ const skills = [
     category: 'Frontend Essentials',
     icon: <FiLayers className="w-6 h-6 text-neon-blue" />,
     items: [
-      {name:'HTML',level:95},
-      {name:'CSS',level:95},
+      { name: 'HTML', level: 95 },
+      { name: 'CSS', level: 95 },
       { name: 'React', level: 90 },
       { name: 'TailwindCSS', level: 90 },
       { name: 'Flutter', level: 70 },
@@ -57,26 +58,6 @@ const skills = [
     ],
   },
 ];
-
-const SkillBar = ({ name, level }) => {
-  return (
-    <div className="mb-4">
-      <div className="flex justify-between mb-1">
-        <span className="text-sm font-medium">{name}</span>
-        <span className="text-xs text-text-muted">{level}%</span>
-      </div>
-      <div className="w-full bg-background rounded-full h-2">
-        <motion.div
-          className="h-full rounded-full bg-gradient-to-r from-neon-blue to-neon-purple"
-          initial={{ width: 0 }}
-          whileInView={{ width: `${level}%` }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-        />
-      </div>
-    </div>
-  );
-};
 
 const Skills = () => {
   const container = {
@@ -121,24 +102,40 @@ const Skills = () => {
           viewport={{ once: true }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {skills.map((skill, index) => (
-            <motion.div
-              key={index}
-              variants={item}
-              className="card hover:shadow-[0_0_15px_rgba(0,191,255,0.1)] hover:border-neon-blue/50 transition-all duration-300 group"
-            >
-              <div className="flex items-center mb-6">
-                <div className="p-2 bg-background rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
-                  {skill.icon}
+          {skills.map((skillGroup, index) => (
+            <TiltCard key={skillGroup.category} className="h-full">
+              <motion.div
+                variants={item}
+                className="glass-panel p-6 rounded-xl border border-gray-800 hover:border-neon-purple/50 transition-all duration-300 h-full"
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-surface rounded-lg text-neon-purple">
+                    {skillGroup.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-text-primary">{skillGroup.category}</h3>
                 </div>
-                <h3 className="text-xl font-bold group-hover:text-neon-blue transition-colors">{skill.category}</h3>
-              </div>
-              <div className="space-y-4">
-                {skill.items.map((item, idx) => (
-                  <SkillBar key={idx} name={item.name} level={item.level} />
-                ))}
-              </div>
-            </motion.div>
+
+                <div className="space-y-4">
+                  {skillGroup.items.map((skill) => (
+                    <div key={skill.name}>
+                      <div className="flex justify-between mb-1">
+                        <span className="text-text-secondary font-medium">{skill.name}</span>
+                        <span className="text-text-muted text-sm">{skill.level}%</span>
+                      </div>
+                      <div className="h-2 bg-surface rounded-full overflow-hidden">
+                        <motion.div
+                          className="h-full bg-gradient-to-r from-neon-blue to-neon-purple"
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          transition={{ duration: 1, delay: 0.5 }}
+                          viewport={{ once: true }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </TiltCard>
           ))}
 
           <motion.div

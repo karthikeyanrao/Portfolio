@@ -7,25 +7,37 @@
 /* Custom styles */
 body {
   @apply bg-background text-text-primary font-sans antialiased;
+  cursor: none;
+  /* Hide default cursor */
+}
+
+/* Ensure links and buttons also don't show the default pointer */
+a,
+button,
+[role="button"],
+input,
+select,
+textarea {
+  cursor: none;
 }
 
 /* Neon glow effect */
 .neon-glow {
   text-shadow: 0 0 5px theme('colors.neon-blue'),
-               0 0 10px theme('colors.neon-blue'),
-               0 0 15px theme('colors.neon-blue');
+    0 0 10px theme('colors.neon-blue'),
+    0 0 15px theme('colors.neon-blue');
   transition: text-shadow 0.3s ease;
 }
 
 .neon-glow:hover {
   text-shadow: 0 0 10px theme('colors.neon-blue'),
-               0 0 20px theme('colors.neon-blue'),
-               0 0 30px theme('colors.neon-blue');
+    0 0 20px theme('colors.neon-blue'),
+    0 0 30px theme('colors.neon-blue');
 }
 
 .neon-border {
   box-shadow: 0 0 5px theme('colors.neon-blue'),
-              0 0 10px theme('colors.neon-blue');
+    0 0 10px theme('colors.neon-blue');
 }
 
 .glass-panel {
@@ -59,8 +71,15 @@ body {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .gradient-text {

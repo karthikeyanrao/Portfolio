@@ -10,6 +10,9 @@ import Experience from './components/sections/Experience';
 import Publications from './components/sections/Publications';
 import Contact from './components/sections/Contact';
 import NotFound from './components/ui/NotFound';
+import CustomCursor from './components/ui/CustomCursor';
+import ScrollProgress from './components/ui/ScrollProgress';
+import ParallaxBackground from './components/ui/ParallaxBackground';
 
 // This component handles the page scroll behavior
 const ScrollToTop = () => {
@@ -51,6 +54,9 @@ function App() {
 
   return (
     <Router>
+      <CustomCursor />
+      <ScrollProgress />
+      <ParallaxBackground />
       <ScrollToTop />
       <Layout>
         <AnimatePresence mode="wait">

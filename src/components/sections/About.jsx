@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FiAward, FiCode, FiServer, FiShield } from 'react-icons/fi';
-import { useState } from 'react';
+import TiltCard from '../ui/TiltCard';
 
 const About = () => {
   const container = {
@@ -55,7 +55,13 @@ const About = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="gradient-text">About Me</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green mx-auto mb-6"></div>
+          <motion.div
+            className="h-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green mx-auto mb-6"
+            initial={{ width: 0 }}
+            whileInView={{ width: '5rem' }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          />
           <p className="text-text-muted max-w-3xl mx-auto text-lg">
             Third-year Computer Science Engineering student specializing in <span className="text-neon-blue">cloud-native development</span>, <span className="text-neon-purple">backend engineering</span>, and <span className="text-neon-green">blockchain applications</span>.
           </p>
@@ -69,7 +75,7 @@ const About = () => {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            <div className="relative z-10 rounded-xl overflow-hidden border border-gray-800 hover:border-neon-blue/50 transition-all duration-300 group">
+            <div className="relative z-10 rounded-xl overflow-hidden border border-gray-800 hover:border-neon-blue/50 transition-all duration-300 group animate-float">
               <img
                 src="/profile.jpg"
                 alt="Profile"
@@ -82,8 +88,6 @@ const About = () => {
                 <p className="text-neon-blue font-mono">Building the future...</p>
               </div>
             </div>
-            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-neon-blue/30 rounded-xl -z-10"></div>
-            <div className="absolute -top-4 -left-4 w-20 h-20 border-t-2 border-l-2 border-neon-purple/30 rounded-tl-xl -z-10"></div>
           </motion.div>
 
           <motion.div
@@ -105,21 +109,22 @@ const About = () => {
 
             <div className="grid grid-cols-1 gap-6">
               {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  variants={item}
-                  className="card hover:shadow-[0_0_15px_rgba(0,191,255,0.1)] hover:border-neon-blue/50 transition-all duration-300 group"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-background rounded-lg group-hover:scale-110 transition-transform duration-300 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
-                      {feature.icon}
+                <TiltCard key={index} className="h-full">
+                  <motion.div
+                    variants={item}
+                    className="card hover:shadow-[0_0_15px_rgba(0,191,255,0.1)] hover:border-neon-blue/50 transition-all duration-300 group h-full"
+                  >
+                    <div className="flex items-start space-x-4">
+                      <div className="p-3 bg-background rounded-lg group-hover:scale-110 transition-transform duration-300 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                        {feature.icon}
+                      </div>
+                      <div>
+                        <h4 className="font-bold mb-1 text-text-primary group-hover:text-neon-blue transition-colors">{feature.title}</h4>
+                        <p className="text-sm text-text-muted">{feature.description}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-bold mb-1 text-text-primary group-hover:text-neon-blue transition-colors">{feature.title}</h4>
-                      <p className="text-sm text-text-muted">{feature.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </TiltCard>
               ))}
               <motion.div variants={item} className="pt-4">
                 <a
@@ -146,51 +151,6 @@ const About = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Testimonials Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-20"
-        >
-          <h3 className="text-2xl font-bold text-center mb-10">
-            <span className="gradient-text">What People Say</span>
-          </h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-secondary/50 p-6 rounded-xl border border-gray-800 relative">
-              <div className="text-neon-blue text-4xl absolute top-4 left-4 opacity-30">"</div>
-              <p className="text-text-muted mb-4 relative z-10 italic">
-                "One of the most dedicated interns we've had. His ability to grasp complex backend architectures and implement them efficiently was impressive."
-              </p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-neon-purple font-bold mr-3">
-                  JD
-                </div>
-                <div>
-                  <h4 className="font-bold text-sm">John Doe</h4>
-                  <p className="text-xs text-text-muted">Tech Lead, Codenatives</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-secondary/50 p-6 rounded-xl border border-gray-800 relative">
-              <div className="text-neon-blue text-4xl absolute top-4 left-4 opacity-30">"</div>
-              <p className="text-text-muted mb-4 relative z-10 italic">
-                "Exceptional problem-solving skills. He automated our entire inventory process, saving us hours of manual work every week."
-              </p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-neon-green font-bold mr-3">
-                  AS
-                </div>
-                <div>
-                  <h4 className="font-bold text-sm">Anita Singh</h4>
-                  <p className="text-xs text-text-muted">Project Manager, ShadowFox</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

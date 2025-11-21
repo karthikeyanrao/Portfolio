@@ -119,7 +119,7 @@ const Publications = () => {
 
         <div className="text-center mt-12">
           <a
-            href="https://scholar.google.com/citations?user=YOUR_PROFILE"
+            href="https://scholar.google.com/citations?user=lxB2rTQAAAAJ&hl=en"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center text-neon-blue hover:text-neon-blue/80 transition-colors"

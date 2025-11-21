@@ -137,52 +137,6 @@ const Skills = () => {
               </motion.div>
             </TiltCard>
           ))}
-
-          <motion.div
-            variants={item}
-            className="card hover:shadow-neon-blue/10 hover:border-neon-blue/30 flex flex-col justify-center items-center p-8 text-center"
-          >
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-6">
-              <svg
-                className="w-8 h-8 text-neon-blue"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                />
-              </svg>
-            </div>
-            <h3 className="text-xl font-bold mb-2">And More</h3>
-            <p className="text-text-muted mb-6">
-              Continuously learning and exploring new technologies to expand my skill set.
-            </p>
-            <a
-              href="#contact"
-              className="text-neon-blue hover:text-neon-blue/80 transition-colors inline-flex items-center"
-            >
-              <span>Let's discuss your project</span>
-              <svg
-                className="w-4 h-4 ml-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </a>
-          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin, FiSend, FiGithub, FiLinkedin} from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiSend, FiGithub, FiLinkedin } from 'react-icons/fi';
 import { FaInstagram } from "react-icons/fa";
 
 const Contact = () => {
@@ -55,6 +55,12 @@ const Contact = () => {
   };
 
   const contactInfo = [
+    {
+      icon: <FiPhone className="w-6 h-6" />,
+      title: 'Phone',
+      value: '+91 6380588382',
+      href: 'tel:+916380588382',
+    },
     {
       icon: <FiMail className="w-6 h-6" />,
       title: 'Email Me',

@@ -150,8 +150,8 @@ const Experience = () => {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${activeTab === tab.id
-                    ? 'bg-gradient-to-r from-neon-blue to-neon-purple text-background'
-                    : 'text-text-muted hover:text-text-primary'
+                  ? 'bg-gradient-to-r from-neon-blue to-neon-purple text-background'
+                  : 'text-text-muted hover:text-text-primary'
                   }`}
               >
                 {tab.label}
@@ -160,8 +160,14 @@ const Experience = () => {
           </div>
         </div>
 
-        <div className="relative
-          before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-neon-blue before:via-neon-purple before:to-neon-green">
+        <div className="relative">
+          <motion.div
+            className="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-neon-blue via-neon-purple to-neon-green"
+            initial={{ height: 0 }}
+            whileInView={{ height: '100%' }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
           <div className="space-y-8">
             {filteredExperiences.map((experience) => (
               <ExperienceCard key={experience.id} experience={experience} />

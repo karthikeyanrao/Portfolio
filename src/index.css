@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@700;800;900&display=swap');
+
+/* Custom styles */
+body {
+  @apply bg-background text-text-primary font-sans antialiased;
+}
+
+/* Neon glow effect */
+.neon-glow {
+  text-shadow: 0 0 5px theme('colors.neon-blue'),
+               0 0 10px theme('colors.neon-blue'),
+               0 0 15px theme('colors.neon-blue');
+  transition: text-shadow 0.3s ease;
+}
+
+.neon-glow:hover {
+  text-shadow: 0 0 10px theme('colors.neon-blue'),
+               0 0 20px theme('colors.neon-blue'),
+               0 0 30px theme('colors.neon-blue');
+}
+
+.neon-border {
+  box-shadow: 0 0 5px theme('colors.neon-blue'),
+              0 0 10px theme('colors.neon-blue');
+}
+
+.glass-panel {
+  @apply bg-secondary/30 backdrop-blur-md border border-white/10;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neon-blue/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neon-blue/70;
+}
+
+/* Animation classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green;
+}
+
+/* Section container */
+.section-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+}
+
+/* Button styles */
+.btn {
+  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background focus:ring-neon-blue;
+}
+
+.btn-primary {
+  @apply bg-neon-blue text-background hover:bg-opacity-90 focus:ring-neon-blue;
+}
+
+.btn-secondary {
+  @apply bg-transparent border-2 border-neon-blue text-neon-blue hover:bg-neon-blue hover:bg-opacity-10 focus:ring-neon-blue;
+}
+
+/* Card styles */
+.card {
+  @apply bg-secondary rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-neon-blue/50;
+}
+
+/* Timeline styles */
+.timeline-item {
+  @apply relative pl-8 pb-8 border-l-2 border-neon-blue/30;
+}
+
+.timeline-item:last-child {
+  @apply pb-0;
+}
+
+.timeline-dot {
+  @apply absolute w-4 h-4 rounded-full bg-neon-blue -left-[9px] top-0 ring-4 ring-background;
+}

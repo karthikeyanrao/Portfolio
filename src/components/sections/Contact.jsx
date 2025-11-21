@@ -13,6 +13,9 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ success: null, message: '' });
 
+
+  const FORMSPREE_FORM_ID = 'xovbveyn';
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -25,9 +28,17 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    if (FORMSPREE_FORM_ID === 'YOUR_FORMSPREE_ID') {
+      setSubmitStatus({
+        success: false,
+        message: '⚠️ Please configure your Formspree ID in the code to send messages.'
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      // Replace with your form submission logic (e.g., Formspree, EmailJS, or your own backend)
-      const response = await fetch('https://formspree.io/f/your-form-id', {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -38,7 +49,7 @@ const Contact = () => {
       if (response.ok) {
         setSubmitStatus({
           success: true,
-          message: 'Your message has been sent successfully! I\'ll get back to you soon.'
+          message: 'Thanks! Your message has been sent successfully. I\'ll get back to you soon.'
         });
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {

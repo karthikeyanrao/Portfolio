@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiX } from 'react-icons/fi';
-import { FaAws, FaEthereum, FaTools, FaVoteYea } from 'react-icons/fa';
+import { FaAws, FaEthereum, FaTools, FaVoteYea, FaUsers } from 'react-icons/fa';
 import TiltCard from '../ui/TiltCard';
 
 const projects = [
@@ -13,7 +13,7 @@ const projects = [
     icon: FaAws,
     gradient: 'from-orange-500 to-yellow-500',
     github: 'https://github.com/karthikeyanrao/insuraai',
-    demo: 'https://insuraai.demo.com',
+    demo: 'https://insuraai.vercel.app/',
     details: {
       problem: 'Manual insurance claim processing is slow, error-prone, and vulnerable to fraud.',
       solution: 'Built a serverless automated validation system that uses GenAI for document analysis and fraud patterns.',
@@ -42,7 +42,7 @@ const projects = [
     icon: FaEthereum,
     gradient: 'from-purple-500 to-pink-500',
     github: 'https://github.com/karthikeyanrao/metahive',
-    demo: 'https://metahive.xyz',
+    demo: 'https://metahive.vercel.app/',
     details: {
       problem: 'Real estate transactions suffer from high intermediary fees and lack of transparency.',
       solution: 'Developed a decentralized marketplace where ownership is transferred via smart contracts.',
@@ -71,7 +71,7 @@ const projects = [
     icon: FaTools,
     gradient: 'from-green-500 to-teal-500',
     github: 'https://github.com/karthikeyanrao/sitemanager',
-    demo: 'https://sitemanager.app',
+    demo: 'https://site-manager-five.vercel.app/',
     details: {
       problem: 'Construction sites lack efficient digital tools for workforce and project management.',
       solution: 'Created a comprehensive dashboard for managing multiple sites, workers, and expenses.',
@@ -94,30 +94,36 @@ const projects = [
   },
   {
     id: 4,
-    title: 'AMC FOSS',
-    description: 'Secure and transparent voting system based on Blockchain technology ensuring tamper-proof elections.',
-    tags: ['Blockchain', 'React', 'Node.js', 'MongoDB'],
-    icon: FaVoteYea,
-    gradient: 'from-blue-500 to-cyan-500',
-    github: 'https://github.com/karthikeyanrao/smartvote',
-    demo: 'https://smartvote.demo.com',
+    title: 'AMC FOSS Club',
+    description: 'A vibrant student-driven open-source community at Amrita, focused on fostering innovation, collaboration, and technical development.',
+    tags: ['Open Source', 'Leadership', 'Community', 'Workshops'],
+    icon: FaUsers,
+    gradient: 'from-purple-500 to-pink-500',
+    github: 'https://github.com/karthikeyanrao/AMCFOSS',
+    demo: 'https://amcfoss.vercel.app/',
     details: {
-      problem: 'Traditional voting systems are often questioned for their security and transparency.',
-      solution: 'Implemented a blockchain-based voting platform where every vote is immutable and verifiable.',
+      problem: 'Students often lack hands-on exposure to real-world open-source development, collaborative coding culture, and modern tech ecosystems.',
+      solution: 'AMC FOSS provides a platform where students can learn, build, and contribute to open-source projects while gaining mentorship, technical skills, and industry-level exposure.',
       features: [
-        'Tamper-proof Vote Recording',
-        'Voter Anonymity & Verification',
-        'Real-time Result Counting',
-        'Admin Dashboard for Elections'
+        'Weekly Workshops & Tech Sessions',
+        'Project-Based Learning with Mentorship',
+        'Open-Source Contributions & Git Training',
+        'Hackathon Preparation & Team Formation',
+        'Community Events, Meetups & Webinars'
       ],
       technologies: [
-        'Ethereum', 'Solidity', 'React', 'Node.js',
-        'MongoDB', 'Express'
+        'Git & GitHub',
+        'Linux',
+        'Python',
+        'Web Development',
+        'Cloud & DevOps',
+        'Open Source Tools'
       ],
       achievements: [
-        'Ensures 100% transparency',
-        'Eliminates double voting',
-        'Secure voter authentication'
+        'Built and mentored multiple open-source student projects',
+        'Organized technical events attended by 100+ students',
+        'Helped peers contribute to open-source and improve coding skills',
+        'Encouraged developer culture across the campus'
       ]
     }
   }

@@ -10,7 +10,7 @@ const NotFound = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h1 className="text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-4">
+                    <h1 className="text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple mb-4">
                         404
                     </h1>
                     <h2 className="text-3xl font-bold text-text-primary mb-6">

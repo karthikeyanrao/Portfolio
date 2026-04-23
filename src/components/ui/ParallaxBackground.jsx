@@ -19,7 +19,7 @@ const ParallaxBackground = () => {
             {/* Gradient Orbs */}
             <motion.div
                 style={{ y: y1, rotate: rotate1 }}
-                className="absolute top-[10%] left-[10%] w-[30vw] h-[30vw] rounded-full bg-neon-blue/5 blur-[100px]"
+                className="absolute top-[10%] left-[10%] w-[30vw] h-[30vw] rounded-full bg-neon-cyan/5 blur-[100px]"
             />
             <motion.div
                 style={{ y: y2, rotate: rotate2 }}

@@ -6,13 +6,12 @@ const experiences = [
     id: 1,
     role: 'Full Stack Intern',
     company: 'Codenatives',
-    period: '2025',
+    period: 'May–Jun 2025',
     location: 'Remote',
     description: 'Built scalable web applications using Python and Django framework.',
     achievements: [
-      'Built Python + Django CRUD system',
-      'Improved efficiency by 20% through code optimization',
-      'Implemented secure authentication and authorization'
+      'Built a full-stack CRUD application with Django REST backend and React frontend, improving data handling efficiency by ~20%',
+      'Implemented secure session-based authentication and authorization for multi-user access'
     ],
     icon: <FiBriefcase className="w-5 h-5" />,
     type: 'work'
@@ -21,13 +20,12 @@ const experiences = [
     id: 2,
     role: 'Java Developer Intern',
     company: 'ShadowFox',
-    period: '2025',
+    period: 'Feb–Mar 2025',
     location: 'Remote',
     description: 'Developed enterprise-level Java applications and backend services.',
     achievements: [
-      'Created Java-based inventory system',
-      'Automated manual updates by 30%',
-      'Optimized database queries for better performance'
+      'Automated data ingestion pipelines with Spring Boot, eliminating 30% of manual synchronization overhead across 3 services',
+      'Optimized database queries reducing average response latency for inventory lookups'
     ],
     icon: <FiBriefcase className="w-5 h-5" />,
     type: 'work'
@@ -36,13 +34,12 @@ const experiences = [
     id: 3,
     role: 'Software Developer Intern',
     company: 'CorpField',
-    period: '2023',
+    period: 'Apr–Aug 2023',
     location: 'Remote',
-    description: 'Focused on automated testing and quality assurance.',
+    description: 'Focused on automated testing and quality assurance for AI-generated modules.',
     achievements: [
-      'Automated testing using Java + Cucumber',
-      'Improved test reliability significantly',
-      'Reduced regression testing time by 40%'
+      'Built a CI/CD-integrated automated testing suite achieving 85%+ code coverage for AI-generated modules',
+      'Reduced regression testing time by 40% through Cucumber-based end-to-end test automation'
     ],
     icon: <FiBriefcase className="w-5 h-5" />,
     type: 'work'
@@ -55,7 +52,7 @@ const experiences = [
     location: 'India',
     description: 'Specializing in Computer Science',
     achievements: [
-      'CGPA: 8.34/10 (Up to 5th semester)',
+      'CGPA: 8.33/10 (Up to 5th semester)',
       'Winner, Kurukshetra 2025',
       'Winner, MorphX 2.0'
     ],
@@ -71,15 +68,15 @@ const ExperienceCard = ({ experience }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="relative pl-8 pb-8 border-l-2 border-neon-blue/30 last:border-l-0 last:pb-0 group"
+      className="relative pl-8 pb-8 border-l-2 border-neon-cyan/30 last:border-l-0 last:pb-0 group"
     >
-      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-neon-blue ring-4 ring-background z-10"></div>
+      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-neon-cyan ring-4 ring-background z-10"></div>
 
-      <div className="bg-secondary/50 backdrop-blur-sm p-6 rounded-lg border border-gray-800 hover:border-neon-blue/50 transition-all duration-300">
+      <div className="bg-secondary/50 backdrop-blur-sm p-6 rounded-lg border border-gray-800 hover:border-neon-cyan/50 transition-all duration-300">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
           <div>
             <h3 className="text-xl font-bold text-text-primary">{experience.role}</h3>
-            <div className="flex items-center text-sm text-neon-blue mt-1">
+            <div className="flex items-center text-sm text-neon-cyan mt-1">
               <span className="flex items-center mr-4">
                 <FiBriefcase className="mr-1.5" />
                 {experience.company}
@@ -103,7 +100,7 @@ const ExperienceCard = ({ experience }) => {
         <ul className="space-y-2">
           {experience.achievements.map((achievement, index) => (
             <li key={index} className="flex items-start">
-              <span className="text-neon-blue mr-2 mt-1">•</span>
+              <span className="text-neon-cyan mr-2 mt-1">•</span>
               <span className="text-text-muted">{achievement}</span>
             </li>
           ))}
@@ -133,7 +130,7 @@ const Experience = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="gradient-text">Experience & Education</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-green mx-auto mb-6"></div>
           <p className="text-text-muted max-w-3xl mx-auto">
             My professional journey and academic background that shaped my skills and expertise.
           </p>
@@ -150,7 +147,7 @@ const Experience = () => {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${activeTab === tab.id
-                  ? 'bg-gradient-to-r from-neon-blue to-neon-purple text-background'
+                  ? 'bg-gradient-to-r from-neon-cyan to-neon-purple text-background'
                   : 'text-text-muted hover:text-text-primary'
                   }`}
               >
@@ -162,7 +159,7 @@ const Experience = () => {
 
         <div className="relative">
           <motion.div
-            className="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-neon-blue via-neon-purple to-neon-green"
+            className="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-neon-cyan via-neon-purple to-neon-green"
             initial={{ height: 0 }}
             whileInView={{ height: '100%' }}
             viewport={{ once: true }}

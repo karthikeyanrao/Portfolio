@@ -81,7 +81,7 @@ const Contact = () => {
     {
       icon: <FiGithub className="w-6 h-6" />,
       title: 'GitHub',
-      value: 'github.com/karthikeyanrai',
+      value: 'github.com/karthikeyanrao',
       href: 'https://github.com/karthikeyanrao',
     },
     {
@@ -112,7 +112,7 @@ const Contact = () => {
     {
       name: 'Instagram',
       icon: <FaInstagram className="w-5 h-5" />,
-      href: 'https://www.instagram.com/heyy._karthi',
+      href: 'https://www.instagram.com/http.karthi',
     },
   ];
 
@@ -129,9 +129,9 @@ const Contact = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="gradient-text">Get In Touch</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-green mx-auto mb-6"></div>
           <p className="text-text-muted max-w-3xl mx-auto">
-            Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
+            Open to full-time roles, internships, and freelance projects in cloud engineering, backend development, and Web3. Based in Chennai, India.
           </p>
         </motion.div>
 
@@ -151,7 +151,7 @@ const Contact = () => {
             <div className="space-y-6">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-start space-x-4">
-                  <div className="p-3 bg-secondary rounded-lg text-neon-blue border border-neon-blue/20 shadow-[0_0_10px_rgba(0,191,255,0.1)]">
+                  <div className="p-3 bg-background-secondary rounded-lg text-neon-cyan border border-neon-cyan/20 shadow-[0_0_10px_rgba(0,191,255,0.1)]">
                     {item.icon}
                   </div>
                   <div>
@@ -160,7 +160,7 @@ const Contact = () => {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-text-muted hover:text-neon-blue transition-colors"
+                      className="text-text-muted hover:text-neon-cyan transition-colors"
                     >
                       {item.value}
                     </a>
@@ -215,7 +215,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-background border border-gray-800 rounded-lg focus:ring-2 focus:ring-neon-blue/50 focus:border-neon-blue outline-none transition-all text-text-primary"
+                    className="w-full px-4 py-3 bg-background border border-gray-800 rounded-lg focus:ring-2 focus:ring-neon-cyan/50 focus:border-neon-cyan outline-none transition-all text-text-primary"
                     placeholder="Karthikeyan"
                   />
                 </div>
@@ -230,7 +230,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-background border border-gray-800 rounded-lg focus:ring-2 focus:ring-neon-blue/50 focus:border-neon-blue outline-none transition-all text-text-primary"
+                    className="w-full px-4 py-3 bg-background border border-gray-800 rounded-lg focus:ring-2 focus:ring-neon-cyan/50 focus:border-neon-cyan outline-none transition-all text-text-primary"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -247,7 +247,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-background border border-gray-800 rounded-lg focus:ring-2 focus:ring-neon-blue/50 focus:border-neon-blue outline-none transition-all text-text-primary"
+                  className="w-full px-4 py-3 bg-background border border-gray-800 rounded-lg focus:ring-2 focus:ring-neon-cyan/50 focus:border-neon-cyan outline-none transition-all text-text-primary"
                   placeholder="How can I help you?"
                 />
               </div>
@@ -263,7 +263,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-background border border-gray-800 rounded-lg focus:ring-2 focus:ring-neon-blue/50 focus:border-neon-blue outline-none transition-all text-text-primary resize-none"
+                  className="w-full px-4 py-3 bg-background border border-gray-800 rounded-lg focus:ring-2 focus:ring-neon-cyan/50 focus:border-neon-cyan outline-none transition-all text-text-primary resize-none"
                   placeholder="Hi there! I'd like to discuss a project..."
                 ></textarea>
               </div>

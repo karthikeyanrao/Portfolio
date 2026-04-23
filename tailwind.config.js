@@ -8,16 +8,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#0B0D10',
-        secondary: '#111418',
-        'neon-blue': '#00BFFF',
-        'neon-purple': '#B56CFF',
-        'neon-green': '#00FFB0',
-        'text-primary': '#F2F5F7',
-        'text-muted': '#9AA0A6',
-        'accent-1': '#00BFFF',
-        'accent-2': '#B56CFF',
-        'accent-3': '#00FFB0',
+        // Deep space backgrounds
+        background: '#0a0a0f',
+        'background-secondary': '#0f0f14',
+        'background-tertiary': '#14141a',
+
+        // Refined neon accents
+        'neon-cyan': '#00d9ff',
+        'neon-purple': '#a855f7',
+        'neon-green': '#00ff88',
+
+        // Text colors
+        'text-primary': '#ffffff',
+        'text-secondary': '#e5e7eb',
+        'text-muted': '#9ca3af',
+        'text-dim': '#6b7280',
+
+        // Legacy support (keeping old names for compatibility)
+        'neon-blue': '#00d9ff',
+        secondary: '#0f0f14',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

@@ -65,10 +65,10 @@ export default function Layout({ children }) {
         <div className="min-h-screen flex flex-col bg-background">
           {/* Header */}
           <header
-            className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-background/90 backdrop-blur-md py-2 shadow-lg' : 'py-4'
+            className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-background/90 backdrop-blur-md py-3 shadow-lg' : 'py-5'
               }`}
           >
-            <div className="section-container flex justify-between items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
               {/* Logo */}
               <a
                 href="#"
@@ -84,7 +84,7 @@ export default function Layout({ children }) {
                   <a
                     key={link.name}
                     href={link.href}
-                    className="text-text-muted hover:text-neon-blue transition-colors duration-300 font-medium"
+                    className="text-text-muted hover:text-neon-cyan transition-colors duration-300 font-medium"
                   >
                     {link.name}
                   </a>
@@ -124,12 +124,12 @@ export default function Layout({ children }) {
                   exit={{ opacity: 0, height: 0 }}
                   className="md:hidden overflow-hidden"
                 >
-                  <div className="px-4 py-2 space-y-4 bg-secondary">
+                  <div className="px-4 py-2 space-y-4 bg-background-secondary">
                     {navLinks.map((link) => (
                       <a
                         key={link.name}
                         href={link.href}
-                        className="block py-2 text-text-primary hover:text-neon-blue"
+                        className="block py-2 text-text-primary hover:text-neon-cyan"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -163,7 +163,7 @@ export default function Layout({ children }) {
           </main>
 
           {/* Footer */}
-          <footer className="bg-secondary py-12 border-t border-gray-800">
+          <footer className="bg-background-secondary py-12 border-t border-gray-800">
             <div className="section-container">
               <div className="flex flex-col md:flex-row justify-between items-center">
                 <div className="mb-6 md:mb-0">
@@ -180,7 +180,7 @@ export default function Layout({ children }) {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-text-muted hover:text-neon-blue transition-colors duration-300"
+                        className="text-text-muted hover:text-neon-cyan transition-colors duration-300"
                         aria-label={social.name}
                       >
                         <Icon size={24} />

@@ -21,7 +21,7 @@ const About = () => {
 
   const features = [
     {
-      icon: <FiCode className="w-8 h-8 text-neon-blue" />,
+      icon: <FiCode className="w-8 h-8 text-neon-cyan" />,
       title: 'Professional Value',
       description: 'Experienced in AWS Lambda, Serverless Architectures, Smart Contracts, React, Java, and Firebase.',
     },
@@ -36,7 +36,7 @@ const About = () => {
       description: 'Seeking roles in cloud engineering, backend development, AWS DevOps, or Web3 engineering.',
     },
     {
-      icon: <FiShield className="w-8 h-8 text-neon-blue" />,
+      icon: <FiShield className="w-8 h-8 text-neon-cyan" />,
       title: 'Fun Facts',
       description: 'Enjoys cybersecurity challenges, UI/UX enthusiast, and loves creating clean backend architectures.',
     },
@@ -56,18 +56,19 @@ const About = () => {
             <span className="gradient-text">About Me</span>
           </h2>
           <motion.div
-            className="h-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green mx-auto mb-6"
+            className="h-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-green mx-auto mb-6"
             initial={{ width: 0 }}
             whileInView={{ width: '5rem' }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           />
           <p className="text-text-muted max-w-3xl mx-auto text-lg">
-            Third-year Computer Science Engineering student specializing in <span className="text-neon-blue">cloud-native development</span>, <span className="text-neon-purple">backend engineering</span>, and <span className="text-neon-green">blockchain applications</span>.
+            Third-year Computer Science Engineering student specializing in <span className="text-neon-cyan">cloud-native development</span>, <span className="text-neon-purple">backend engineering</span>, and <span className="text-neon-green">blockchain applications</span>.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left side — Photo + key stats instead of empty floating circle */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -75,21 +76,38 @@ const About = () => {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            <div className="relative z-10 rounded-xl overflow-hidden border border-gray-800 hover:border-neon-blue/50 transition-all duration-300 group animate-float">
+            <div className="relative z-10 rounded-xl overflow-hidden border border-gray-800 hover:border-neon-cyan/50 transition-all duration-300 group">
               <img
-                src="/profile.jpg"
-                alt="Profile"
+                src="/Photo.jpg"
+                alt="Karthikeyan Suresh"
                 className="w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
                 onError={(e) => {
                   e.target.src = 'https://via.placeholder.com/400x500/0B0D10/F2F5F7?text=Your+Photo';
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <p className="text-neon-blue font-mono">Building the future...</p>
+                <p className="text-neon-cyan font-mono">Building the future...</p>
+              </div>
+            </div>
+
+            {/* Key stat blocks below the photo */}
+            <div className="grid grid-cols-3 gap-3 mt-4">
+              <div className="bg-surface/50 border border-gray-800 rounded-lg p-3 text-center hover:border-neon-cyan/50 transition-all duration-300">
+                <div className="text-2xl font-bold text-neon-cyan">3</div>
+                <div className="text-xs text-text-muted">Publications</div>
+              </div>
+              <div className="bg-surface/50 border border-gray-800 rounded-lg p-3 text-center hover:border-neon-purple/50 transition-all duration-300">
+                <div className="text-2xl font-bold text-neon-purple">2</div>
+                <div className="text-xs text-text-muted">Hackathon Wins</div>
+              </div>
+              <div className="bg-surface/50 border border-gray-800 rounded-lg p-3 text-center hover:border-neon-green/50 transition-all duration-300">
+                <div className="text-2xl font-bold text-neon-green">3</div>
+                <div className="text-xs text-text-muted">Internships</div>
               </div>
             </div>
           </motion.div>
 
+          {/* Right side — About text + feature cards */}
           <motion.div
             variants={container}
             initial="hidden"
@@ -99,11 +117,14 @@ const About = () => {
           >
             <div>
               <h3 className="text-2xl font-bold mb-4">My Journey</h3>
-              <p className="text-text-muted mb-6 leading-relaxed">
-                I started my journey with a curiosity for how systems work at scale.
-                Today, I build resilient cloud architectures and decentralized solutions
-                that solve complex problems. I thrive in hackathons and research, constantly
-                pushing the boundaries of what's possible.
+              <p className="text-text-muted mb-4 leading-relaxed">
+                I'm Karthikeyan Suresh, a Computer Science student at Amrita Vishwa Vidyapeetham (graduating 2027). I specialize in building cloud-native applications, backend services, and blockchain-based systems.
+              </p>
+              <p className="text-text-muted mb-4 leading-relaxed">
+                I've shipped production systems across <span className="text-text-primary font-semibold">AWS, Java, React, and Solidity</span> — winning two national hackathons and completing 3 internships. I also have 3 peer-reviewed publications in IEEE and Springer, though my primary focus is engineering, not research.
+              </p>
+              <p className="text-text-muted leading-relaxed">
+                I'm actively looking for <span className="text-text-primary font-semibold">software developer / engineer roles</span> in cloud engineering, backend development, or Web3 — where I can build systems that matter at scale.
               </p>
             </div>
 
@@ -112,14 +133,14 @@ const About = () => {
                 <TiltCard key={index} className="h-full">
                   <motion.div
                     variants={item}
-                    className="card hover:shadow-[0_0_15px_rgba(0,191,255,0.1)] hover:border-neon-blue/50 transition-all duration-300 group h-full"
+                    className="card hover:shadow-[0_0_15px_rgba(0,217,255,0.1)] hover:border-neon-cyan/50 transition-all duration-300 group h-full"
                   >
                     <div className="flex items-start space-x-4">
                       <div className="p-3 bg-background rounded-lg group-hover:scale-110 transition-transform duration-300 shadow-[0_0_10px_rgba(0,0,0,0.5)]">
                         {feature.icon}
                       </div>
                       <div>
-                        <h4 className="font-bold mb-1 text-text-primary group-hover:text-neon-blue transition-colors">{feature.title}</h4>
+                        <h4 className="font-bold mb-1 text-text-primary group-hover:text-neon-cyan transition-colors">{feature.title}</h4>
                         <p className="text-sm text-text-muted">{feature.description}</p>
                       </div>
                     </div>
@@ -129,7 +150,7 @@ const About = () => {
               <motion.div variants={item} className="pt-4">
                 <a
                   href="#contact"
-                  className="inline-flex items-center text-neon-blue hover:text-neon-blue/80 transition-colors"
+                  className="inline-flex items-center text-neon-cyan hover:text-neon-cyan/80 transition-colors"
                 >
                   <span>Learn more about my journey</span>
                   <svg

@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiX } from 'react-icons/fi';
-import { FaAws, FaEthereum, FaTools, FaVoteYea, FaUsers } from 'react-icons/fa';
+import { FaAws, FaEthereum, FaTools } from 'react-icons/fa';
 import TiltCard from '../ui/TiltCard';
 
 const projects = [
   {
     id: 1,
     title: 'InsuraAI+',
-    description: 'A serverless AI-powered insurance claim validator using AWS Lambda, Step Functions, Bedrock, OCR, and fraud detection.',
-    tags: ['AWS Lambda', 'Step Functions', 'Bedrock', 'React'],
+    description: 'A fully serverless AI pipeline on AWS to automate insurance claim validation. Integrated OCR for document extraction and AWS Bedrock LLMs for fraud detection, reducing manual review time with automated Step Functions orchestration.',
+    tags: ['AWS Lambda', 'Step Functions', 'Bedrock', 'Python', 'OCR'],
     icon: FaAws,
     gradient: 'from-orange-500 to-yellow-500',
     github: 'https://github.com/karthikeyanrao/insuraai',
@@ -36,9 +36,9 @@ const projects = [
   },
   {
     id: 2,
-    title: 'MetaHive - Web3 Real Estate',
-    description: 'Decentralized real estate marketplace on Ethereum with smart contracts for property listings and secure transactions.',
-    tags: ['Ethereum', 'Solidity', 'Web3.js', 'Firebase'],
+    title: 'MetaHive — Web3 Real Estate',
+    description: 'Built an EVM-compatible decentralized real estate marketplace on Ethereum with role-based access control, Firebase Authentication, and smart contract-powered property transfers. Handled 100+ listings with fully on-chain transaction history.',
+    tags: ['Solidity', 'React', 'MongoDB', 'Firebase', 'Web3.js'],
     icon: FaEthereum,
     gradient: 'from-purple-500 to-pink-500',
     github: 'https://github.com/karthikeyanrao/metahive',
@@ -66,8 +66,8 @@ const projects = [
   {
     id: 3,
     title: 'SiteManager',
-    description: 'Multi-tenant construction management system for attendance, payroll, and project tracking.',
-    tags: ['React', 'Firebase', 'Cloud Functions', 'MUI'],
+    description: 'Full-stack React + Firebase application for real-time construction project tracking across payroll, billing, attendance, and expenses. Replaced manual spreadsheet workflows for site managers with a live dashboard and role-based access.',
+    tags: ['React', 'Firebase', 'Cloud Functions', 'REST APIs'],
     icon: FaTools,
     gradient: 'from-green-500 to-teal-500',
     github: 'https://github.com/karthikeyanrao/sitemanager',
@@ -91,41 +91,6 @@ const projects = [
         'Used by 5+ construction firms'
       ]
     }
-  },
-  {
-    id: 4,
-    title: 'AMC FOSS Club',
-    description: 'A vibrant student-driven open-source community at Amrita, focused on fostering innovation, collaboration, and technical development.',
-    tags: ['Open Source', 'Leadership', 'Community', 'Workshops'],
-    icon: FaUsers,
-    gradient: 'from-purple-500 to-pink-500',
-    github: 'https://github.com/karthikeyanrao/AMCFOSS',
-    demo: 'https://amcfoss.vercel.app/',
-    details: {
-      problem: 'Students often lack hands-on exposure to real-world open-source development, collaborative coding culture, and modern tech ecosystems.',
-      solution: 'AMC FOSS provides a platform where students can learn, build, and contribute to open-source projects while gaining mentorship, technical skills, and industry-level exposure.',
-      features: [
-        'Weekly Workshops & Tech Sessions',
-        'Project-Based Learning with Mentorship',
-        'Open-Source Contributions & Git Training',
-        'Hackathon Preparation & Team Formation',
-        'Community Events, Meetups & Webinars'
-      ],
-      technologies: [
-        'Git & GitHub',
-        'Linux',
-        'Python',
-        'Web Development',
-        'Cloud & DevOps',
-        'Open Source Tools'
-      ],
-      achievements: [
-        'Built and mentored multiple open-source student projects',
-        'Organized technical events attended by 100+ students',
-        'Helped peers contribute to open-source and improve coding skills',
-        'Encouraged developer culture across the campus'
-      ]
-    }
   }
 ];
 
@@ -135,7 +100,7 @@ const ProjectCard = ({ project, onClick }) => {
   return (
     <TiltCard className="h-full">
       <div
-        className="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-neon-blue/50 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-[0_0_20px_rgba(0,191,255,0.2)] h-full bg-background"
+        className="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-neon-cyan/50 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-[0_0_20px_rgba(0,191,255,0.2)] h-full bg-background"
         onClick={() => onClick(project)}
       >
         <div className={`aspect-video overflow-hidden bg-gradient-to-br ${project.gradient} flex items-center justify-center relative`}>
@@ -144,19 +109,22 @@ const ProjectCard = ({ project, onClick }) => {
         </div>
         <div className="p-6">
           <div className="flex justify-between items-start mb-3">
-            <h3 className="text-xl font-bold text-text-primary group-hover:text-neon-blue transition-colors">
+            <h3 className="text-xl font-bold text-text-primary group-hover:text-neon-cyan transition-colors">
               {project.title}
             </h3>
+            {/* Made GitHub/Demo links more obvious with labels */}
             <div className="flex gap-2">
               {project.github && (
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-muted hover:text-neon-blue transition-colors"
+                  className="flex items-center gap-1.5 text-sm text-text-muted hover:text-neon-cyan transition-colors bg-surface border border-gray-700 hover:border-neon-cyan/50 rounded-lg px-3 py-1.5"
                   onClick={(e) => e.stopPropagation()}
+                  title="View source code"
                 >
-                  <FiGithub size={20} />
+                  <FiGithub size={16} />
+                  <span className="hidden sm:inline">Code</span>
                 </a>
               )}
               {project.demo && (
@@ -164,10 +132,12 @@ const ProjectCard = ({ project, onClick }) => {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-muted hover:text-neon-blue transition-colors"
+                  className="flex items-center gap-1.5 text-sm text-text-muted hover:text-neon-cyan transition-colors bg-surface border border-gray-700 hover:border-neon-cyan/50 rounded-lg px-3 py-1.5"
                   onClick={(e) => e.stopPropagation()}
+                  title="View live demo"
                 >
-                  <FiExternalLink size={20} />
+                  <FiExternalLink size={16} />
+                  <span className="hidden sm:inline">Demo</span>
                 </a>
               )}
             </div>
@@ -205,7 +175,7 @@ const ProjectModal = ({ project, onClose }) => {
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 50, opacity: 0 }}
-          className="bg-secondary rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
+          className="bg-background-secondary rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
           onClick={(e) => e.stopPropagation()}
         >
           <button
@@ -270,17 +240,17 @@ const ProjectModal = ({ project, onClose }) => {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="md:col-span-2 space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold mb-3 text-neon-blue">The Challenge</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-neon-cyan">The Challenge</h3>
                   <p className="text-text-muted">{project.details.problem}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-3 text-neon-blue">The Solution</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-neon-cyan">The Solution</h3>
                   <p className="text-text-muted mb-4">{project.details.solution}</p>
                   <ul className="space-y-2">
                     {project.details.features.map((feature, index) => (
                       <li key={index} className="flex items-start">
-                        <span className="text-neon-blue mr-2">•</span>
+                        <span className="text-neon-cyan mr-2">•</span>
                         <span className="text-text-muted">{feature}</span>
                       </li>
                     ))}
@@ -290,7 +260,7 @@ const ProjectModal = ({ project, onClose }) => {
 
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold mb-3 text-neon-blue">Technologies</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-neon-cyan">Technologies</h3>
                   <div className="flex flex-wrap gap-2">
                     {project.details.technologies.map((tech, index) => (
                       <span
@@ -305,11 +275,11 @@ const ProjectModal = ({ project, onClose }) => {
 
                 {project.details.achievements && (
                   <div>
-                    <h3 className="text-xl font-semibold mb-3 text-neon-blue">Achievements</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-neon-cyan">Achievements</h3>
                     <ul className="space-y-2">
                       {project.details.achievements.map((achievement, index) => (
                         <li key={index} className="flex items-start">
-                          <span className="text-neon-blue mr-2">•</span>
+                          <span className="text-neon-cyan mr-2">•</span>
                           <span className="text-text-muted">{achievement}</span>
                         </li>
                       ))}
@@ -341,13 +311,13 @@ const Projects = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="gradient-text">Featured Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-green mx-auto mb-6"></div>
           <p className="text-text-muted max-w-3xl mx-auto">
             Here are some of my recent projects. Click on any project to learn more about it.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}
@@ -362,7 +332,7 @@ const Projects = () => {
             href="https://github.com/karthikeyanrao"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-neon-blue hover:text-neon-blue/80 transition-colors"
+            className="inline-flex items-center text-neon-cyan hover:text-neon-cyan/80 transition-colors"
           >
             <span>View more projects on GitHub</span>
             <svg

@@ -44,11 +44,11 @@ const PublicationCard = ({ publication }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="card hover:shadow-neon-blue/10 hover:border-neon-blue/30"
+      className="card hover:shadow-neon-cyan/10 hover:border-neon-cyan/30"
     >
       <div className="flex flex-col h-full">
         <div className="flex items-start justify-between mb-3">
-          <div className="flex items-center text-neon-blue">
+          <div className="flex items-center text-neon-cyan">
             <FiBookOpen className="mr-2" />
             <span className="text-sm font-medium">{publication.conference}</span>
           </div>
@@ -80,7 +80,7 @@ const PublicationCard = ({ publication }) => {
             href={publication.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-neon-blue hover:text-neon-blue/80 transition-colors text-sm"
+            className="inline-flex items-center text-neon-cyan hover:text-neon-cyan/80 transition-colors text-sm"
           >
             <span>Read Paper</span>
             <FiExternalLink className="ml-1" />
@@ -105,7 +105,7 @@ const Publications = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="gradient-text">Research Publications</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-green mx-auto mb-6"></div>
           <p className="text-text-muted max-w-3xl mx-auto">
             My contributions to academic research and publications in top-tier conferences and journals.
           </p>
@@ -122,7 +122,7 @@ const Publications = () => {
             href="https://scholar.google.com/citations?user=lxB2rTQAAAAJ&hl=en"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-neon-blue hover:text-neon-blue/80 transition-colors"
+            className="inline-flex items-center text-neon-cyan hover:text-neon-cyan/80 transition-colors"
           >
             <span>View all publications on Google Scholar</span>
             <svg

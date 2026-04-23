@@ -5,57 +5,28 @@ import TiltCard from '../ui/TiltCard';
 const skills = [
   {
     category: 'Cloud & DevOps',
-    icon: <FiServer className="w-6 h-6 text-neon-blue" />,
-    items: [
-      { name: 'AWS Lambda', level: 95 },
-      { name: 'AWS Step Functions', level: 90 },
-      { name: 'S3, CloudWatch', level: 85 },
-      { name: 'API Gateway', level: 90 },
-      { name: 'AWS Amplify', level: 80 },
-      { name: 'Docker', level: 85 },
-      { name: 'CI/CD Basics', level: 75 },
-    ],
+    icon: <FiServer className="w-6 h-6 text-neon-cyan" />,
+    items: ['AWS Lambda', 'Step Functions', 'S3', 'API Gateway', 'Bedrock', 'CloudWatch', 'CI/CD', 'Docker'],
   },
   {
-    category: 'Backend Development',
+    category: 'Backend',
     icon: <FiCode className="w-6 h-6 text-neon-purple" />,
-    items: [
-      { name: 'Java', level: 90 },
-      { name: 'Python', level: 85 },
-      { name: 'Node.js', level: 75 },
-      { name: 'API Design (REST)', level: 90 },
-    ],
+    items: ['Java', 'Spring Boot', 'Python', 'Django', 'Node.js', 'REST APIs'],
   },
   {
-    category: 'Blockchain Tools',
+    category: 'Web3 & Blockchain',
     icon: <FiCpu className="w-6 h-6 text-neon-green" />,
-    items: [
-      { name: 'Ethereum', level: 85 },
-      { name: 'Solidity', level: 80 },
-      { name: 'Smart Contracts', level: 85 },
-      { name: 'Web3.js / Ethers.js', level: 75 },
-    ],
+    items: ['Solidity', 'Ethereum', 'Smart Contracts', 'Web3.js', 'Ethers.js'],
   },
   {
-    category: 'Frontend Essentials',
-    icon: <FiLayers className="w-6 h-6 text-neon-blue" />,
-    items: [
-      { name: 'HTML', level: 95 },
-      { name: 'CSS', level: 95 },
-      { name: 'React', level: 90 },
-      { name: 'TailwindCSS', level: 90 },
-      { name: 'Flutter', level: 70 },
-    ],
+    category: 'Frontend',
+    icon: <FiLayers className="w-6 h-6 text-neon-cyan" />,
+    items: ['React', 'JavaScript', 'Flutter', 'TailwindCSS', 'HTML/CSS'],
   },
   {
     category: 'Databases',
     icon: <FiDatabase className="w-6 h-6 text-neon-purple" />,
-    items: [
-      { name: 'Firebase', level: 85 },
-      { name: 'MongoDB', level: 80 },
-      { name: 'DynamoDB', level: 75 },
-      { name: 'SQL Basics', level: 80 },
-    ],
+    items: ['MongoDB', 'Firebase', 'DynamoDB', 'SQL'],
   },
 ];
 
@@ -86,12 +57,11 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="gradient-text">Skills & Expertise</span>
+            <span className="gradient-text">Technical Expertise</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-green mx-auto mb-6"></div>
           <p className="text-text-muted max-w-3xl mx-auto">
-            Here are the technologies and tools I work with on a regular basis.
-            I'm always learning and expanding my skill set to stay up-to-date with the latest industry trends.
+            Technologies and tools I work with regularly to build production systems.
           </p>
         </motion.div>
 
@@ -102,7 +72,7 @@ const Skills = () => {
           viewport={{ once: true }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {skills.map((skillGroup, index) => (
+          {skills.map((skillGroup) => (
             <TiltCard key={skillGroup.category} className="h-full">
               <motion.div
                 variants={item}
@@ -115,23 +85,14 @@ const Skills = () => {
                   <h3 className="text-xl font-bold text-text-primary">{skillGroup.category}</h3>
                 </div>
 
-                <div className="space-y-4">
+                <div className="flex flex-wrap gap-2">
                   {skillGroup.items.map((skill) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-text-secondary font-medium">{skill.name}</span>
-                        <span className="text-text-muted text-sm">{skill.level}%</span>
-                      </div>
-                      <div className="h-2 bg-surface rounded-full overflow-hidden">
-                        <motion.div
-                          className="h-full bg-gradient-to-r from-neon-blue to-neon-purple"
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          transition={{ duration: 1, delay: 0.5 }}
-                          viewport={{ once: true }}
-                        />
-                      </div>
-                    </div>
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 text-sm rounded-full bg-surface border border-gray-700 text-text-secondary hover:border-neon-cyan/50 hover:text-neon-cyan transition-all duration-300"
+                    >
+                      {skill}
+                    </span>
                   ))}
                 </div>
               </motion.div>

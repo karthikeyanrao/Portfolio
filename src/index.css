@@ -7,37 +7,39 @@
 /* Custom styles */
 body {
   @apply bg-background text-text-primary font-sans antialiased;
-  cursor: none;
-  /* Hide default cursor */
+  /* Normal cursor stays visible — the cat follows behind it */
 }
 
-/* Ensure links and buttons also don't show the default pointer */
+/* Restore standard cursor behaviors */
 a,
 button,
-[role="button"],
+[role="button"] {
+  cursor: pointer;
+}
+
 input,
 select,
 textarea {
-  cursor: none;
+  cursor: text;
 }
 
 /* Neon glow effect */
 .neon-glow {
-  text-shadow: 0 0 5px theme('colors.neon-blue'),
-    0 0 10px theme('colors.neon-blue'),
-    0 0 15px theme('colors.neon-blue');
+  text-shadow: 0 0 8px theme('colors.neon-cyan'),
+    0 0 16px theme('colors.neon-cyan'),
+    0 0 24px rgba(0, 217, 255, 0.3);
   transition: text-shadow 0.3s ease;
 }
 
 .neon-glow:hover {
-  text-shadow: 0 0 10px theme('colors.neon-blue'),
-    0 0 20px theme('colors.neon-blue'),
-    0 0 30px theme('colors.neon-blue');
+  text-shadow: 0 0 12px theme('colors.neon-cyan'),
+    0 0 24px theme('colors.neon-cyan'),
+    0 0 36px rgba(0, 217, 255, 0.5);
 }
 
 .neon-border {
-  box-shadow: 0 0 5px theme('colors.neon-blue'),
-    0 0 10px theme('colors.neon-blue');
+  box-shadow: 0 0 8px theme('colors.neon-cyan'),
+    0 0 16px rgba(0, 217, 255, 0.3);
 }
 
 .glass-panel {
@@ -45,7 +47,7 @@ textarea {
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-green;
 }
 
 /* Custom scrollbar */
@@ -58,11 +60,11 @@ textarea {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-neon-blue/50 rounded-full;
+  @apply bg-neon-cyan/50 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-neon-blue/70;
+  @apply bg-neon-cyan/70;
 }
 
 /* Animation classes */
@@ -83,7 +85,7 @@ textarea {
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-green;
 }
 
 /* Section container */
@@ -93,25 +95,25 @@ textarea {
 
 /* Button styles */
 .btn {
-  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background focus:ring-neon-blue;
+  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background focus:ring-neon-cyan;
 }
 
 .btn-primary {
-  @apply bg-neon-blue text-background hover:bg-opacity-90 focus:ring-neon-blue;
+  @apply bg-neon-cyan text-background hover:bg-opacity-90 focus:ring-neon-cyan;
 }
 
 .btn-secondary {
-  @apply bg-transparent border-2 border-neon-blue text-neon-blue hover:bg-neon-blue hover:bg-opacity-10 focus:ring-neon-blue;
+  @apply bg-transparent border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:bg-opacity-10 focus:ring-neon-cyan;
 }
 
 /* Card styles */
 .card {
-  @apply bg-secondary rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-neon-blue/50;
+  @apply bg-background-secondary rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-neon-cyan/50;
 }
 
 /* Timeline styles */
 .timeline-item {
-  @apply relative pl-8 pb-8 border-l-2 border-neon-blue/30;
+  @apply relative pl-8 pb-8 border-l-2 border-neon-cyan/30;
 }
 
 .timeline-item:last-child {
@@ -119,5 +121,5 @@ textarea {
 }
 
 .timeline-dot {
-  @apply absolute w-4 h-4 rounded-full bg-neon-blue -left-[9px] top-0 ring-4 ring-background;
+  @apply absolute w-4 h-4 rounded-full bg-neon-cyan -left-[9px] top-0 ring-4 ring-background;
 }

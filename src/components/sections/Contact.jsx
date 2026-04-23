@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin, FiSend, FiGithub, FiLinkedin } from 'react-icons/fi';
-import { FaInstagram } from "react-icons/fa";
+import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -94,7 +93,7 @@ const Contact = () => {
       icon: <FiMapPin className="w-6 h-6" />,
       title: 'Location',
       value: 'Madurai, Tamil Nadu, India',
-      href: 'https://maps.google.com/?q=Madurai+India',
+      href: 'https://maps.google.com/?q=Madurai +India',
     },
   ];
 

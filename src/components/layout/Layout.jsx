@@ -71,7 +71,7 @@ export default function Layout({ children }) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
               {/* Logo */}
               <a
-                href="#"
+                href="#home"
                 className={`font-bold gradient-text font-heading transition-all duration-300 ${isScrolled ? 'text-xl' : 'text-2xl'
                   }`}
               >

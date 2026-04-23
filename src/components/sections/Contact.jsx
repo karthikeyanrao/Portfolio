@@ -98,24 +98,6 @@ const Contact = () => {
     },
   ];
 
-  const socialLinks = [
-    {
-      name: 'GitHub',
-      icon: <FiGithub className="w-5 h-5" />,
-      href: 'https://github.com/karthikeyanrao',
-    },
-    {
-      name: 'LinkedIn',
-      icon: <FiLinkedin className="w-5 h-5" />,
-      href: 'https://www.linkedin.com/in/karthikeyanrao-suresh',
-    },
-    {
-      name: 'Instagram',
-      icon: <FaInstagram className="w-5 h-5" />,
-      href: 'https://www.instagram.com/http.karthi',
-    },
-  ];
-
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="section-container">
